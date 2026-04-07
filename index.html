@@ -21,6 +21,22 @@
             <div class="lilie-top">
                 <img src="assets/lilie_oben.png" alt="">
             </div>
+            <div class="invitation-content">
+                <p class="invitation-title">Ftesë për Kanagjegj</p>
+                <p class="invitation-text">
+                    Është kënaqësi dhe nder i madh për mua t'ju ftoj të merrni pjesë në një nga momentet më të veçanta për familjen time - kënagjegjin e vajzës sime.
+                    Prania juaj do të jetë një bekim i çmuar dhe një gëzim i veçantë për ne.
+                    Ju lutem, konfirmoni pjesëmarrjen tuaj.
+                </p>
+                <div class="lily-decoration">
+                    <object data="assets/lily.svg" type="image/svg+xml" class="lily-svg"></object>
+                </div>
+                <p class="invitation-signature">
+                    Me respekt dhe përzemërsi,
+                    <br>
+                    Valbona Rahimi
+                </p>
+            </div>
             <div class="lilie-bottom">
                 <img src="assets/lilien.png" alt="">
             </div>
@@ -61,6 +77,13 @@
             document.getElementById('envelope').classList.add('hidden');
             document.getElementById('lilien').classList.remove('hidden');
             document.getElementById('details').classList.remove('hidden');
+            // SVG-Animation neu starten
+            const lilySvg = document.querySelector('.lily-svg');
+            if (lilySvg) {
+                const data = lilySvg.data;
+                lilySvg.data = '';
+                lilySvg.data = data;
+            }
         }
     </script>
 </body>
