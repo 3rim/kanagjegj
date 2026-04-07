@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einladung</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <main>
+        <div class="env_wrap" id="envelope">
+            <div class="env_left"></div>
+            <div class="env_right"></div>
+            <div class="env_bottom"></div>
+            <div class="env_top"></div>
+            <div class="wax-seal" onclick="openEnvelope()">
+                <img src="assets/wachssiegel.png" alt="Wachssiegel">
+            </div>
+        </div>
+        <div class="lilien-container hidden" id="lilien">
+            <div class="lilie-top">
+                <img src="assets/lilie_oben.png" alt="">
+            </div>
+            <div class="lilie-bottom">
+                <img src="assets/lilien.png" alt="">
+            </div>
+            <div class="scroll-down" aria-hidden="true">
+                <span class="scroll-text">Scroll down</span>
+                <span class="arrow arrow1"></span>
+                <span class="arrow arrow2"></span>
+            </div>
+        </div>
+        <section class="details hidden" id="details">
+            <div class="grid">
+                <article class="card">
+                    <h2>Data &amp; Ora</h2>
+                    <p>E shtunë, 20 qershor 2026</p>
+                    <p>Hyrja nga ora 18:00</p>
+                </article>
+                <article class="card">
+                    <h2>Restoranti &amp; Lokacioni</h2>
+                    <p>Fish House Delfin</p>
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.4770290388576!2d20.979286915083413!3d41.85632927925709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1353fdc41cffd9bf%3A0x65f994468a9a8cbd!2sFish%20House%20Delfin!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde"
+                            width="600"
+                            height="340"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Fish House Delfin Location"
+                        ></iframe>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+    <script>
+        function openEnvelope() {
+            document.getElementById('envelope').classList.add('hidden');
+            document.getElementById('lilien').classList.remove('hidden');
+            document.getElementById('details').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
