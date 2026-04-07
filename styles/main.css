@@ -20,9 +20,10 @@ main {
 }
 .env_wrap {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   max-width: 700px;
-  height: 50vw;
+  height: 55vw;
+  min-height: 200px;
   max-height: 400px;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.2));
   background: #dfdfe2;
@@ -113,8 +114,8 @@ main {
   height:25vw;
   max-width:300px;
   max-height:300px;
-  min-width:120px;
-  min-height:120px;
+  min-width:100px;
+  min-height:100px;
   z-index:200;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -142,9 +143,10 @@ main {
 }
 .lilien-container {
   position: relative;
-  width: 80vw;
+  width: 90vw;
   max-width: 700px;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   margin: 0 auto;
   border: 3px solid #e8e0d0;
   border-radius: 20px;
@@ -229,42 +231,36 @@ main {
 }
 .invitation-title {
   font-family: "Great Vibes", cursive;
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #4a3428;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   line-height: 1.2;
 }
 .invitation-text {
   font-family: "Instrument Sans", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   color: #4a3428;
-  line-height: 1.8;
-  margin-bottom: 20px;
+  line-height: 2;
+  margin-bottom: 30px;
 }
 .lily-decoration {
-  width: 120px;
-  height: 120px;
-  margin: 10px auto;
-  display: block;
-}
-.lily-decoration object,
-.lily-decoration img {
-  width: 100%;
-  height: 100%;
+  width: 100px;
+  height: 100px;
+  margin: 15px auto;
   display: block;
 }
 .invitation-signature {
   font-family: "Great Vibes", cursive;
   font-size: 1.4rem;
   color: #4a3428;
-  margin-top: 10px;
-  line-height: 1.4;
+  margin-top: 15px;
+  line-height: 1.5;
 }
 .details {
-  width: 80vw;
+  width: 90vw;
   max-width: 700px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 20px 10px;
   animation: fadeIn 0.5s ease-out forwards;
 }
 .grid {
@@ -309,29 +305,38 @@ main {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .invitation-content {
-    width: 85%;
-  }
-  .invitation-title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
-  .invitation-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  .lily-decoration {
-    width: 80px;
-    height: 80px;
-  }
-  .invitation-signature {
-    font-size: 1.2rem;
-  }
   .lilie-top img,
   .lilie-bottom img {
-    max-width: 350px;
-    margin-bottom: -15px;
+    max-width: 250px;
+    margin-bottom: -10px;
+  }
+  .invitation-content {
+    width: 88%;
+    max-width: none;
+  }
+  .invitation-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+  .invitation-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  .lily-decoration {
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+  }
+  .invitation-signature {
+    font-size: 1.4rem;
+    margin-top: 15px;
+  }
+  .scroll-down {
+    bottom: 1.5rem;
+  }
+  .scroll-down .scroll-text {
+    font-size: 1rem;
   }
   .card {
     padding: 15px;
@@ -340,37 +345,85 @@ main {
     font-size: 18px;
   }
   .map-wrapper iframe {
-    height: 200px;
+    height: 180px;
   }
-  .details {
-    padding: 20px 10px;
+  .wax-seal {
+    min-width: 100px;
+    min-height: 100px;
   }
 }
 
 @media (max-width: 480px) {
-  .invitation-content {
-    width: 90%;
-  }
-  .invitation-title {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-  }
-  .invitation-text {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  .lily-decoration {
-    width: 70px;
-    height: 70px;
-    margin: 8px auto;
-  }
-  .invitation-signature {
-    font-size: 1.1rem;
-    margin-top: 8px;
-  }
   .lilie-top img,
   .lilie-bottom img {
-    max-width: 280px;
+    max-width: 200px;
+    margin-bottom: -8px;
+  }
+  .invitation-content {
+    width: 92%;
+  }
+  .invitation-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  .invitation-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+  .lily-decoration {
+    width: 80px;
+    height: 80px;
+    margin: 12px auto;
+  }
+  .invitation-signature {
+    font-size: 1.2rem;
+    margin-top: 12px;
+  }
+  .card {
+    padding: 12px;
+  }
+  .card h2 {
+    font-size: 16px;
+  }
+  .map-wrapper iframe {
+    height: 150px;
+  }
+}
+
+@media (max-width: 375px) {
+  .lilie-top img,
+  .lilie-bottom img {
+    max-width: 160px;
+    margin-bottom: -5px;
+  }
+  .invitation-content {
+    width: 95%;
+  }
+  .invitation-title {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+  .invitation-text {
+    font-size: 0.8rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+  .lily-decoration {
+    width: 45px;
+    height: 45px;
+    margin: 5px auto;
+  }
+  .invitation-signature {
+    font-size: 0.95rem;
+    margin-top: 5px;
+  }
+  .scroll-down .arrow {
+    width: 6px;
+    height: 6px;
+  }
+  .wax-seal {
+    min-width: 80px;
+    min-height: 80px;
   }
 }
