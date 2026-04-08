@@ -234,16 +234,39 @@ main {
 }
 .invitation-content {
   position: absolute;
-  top: 8%;
+  top: 5%;
   left: 50%;
   transform: translate(-50%, 0);
   width: 85%;
-  max-width: 550px;
+  height: 90%;
   text-align: center;
   z-index: 10;
   background: transparent;
   padding: 20px;
   border-radius: 20px;
+  display: grid;
+  grid-template-rows: auto 30% auto auto;
+  gap: 5px;
+  align-items: start;
+}
+.section-title-text {
+  grid-row: 1;
+}
+.section-flower {
+  grid-row: 2;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  min-height: 0;
+}
+.section-signature {
+  grid-row: 3;
+}
+.section-scroll {
+  grid-row: 4;
 }
 .invitation-title {
   font-family: "Great Vibes", cursive;
@@ -264,10 +287,12 @@ main {
   letter-spacing: 0.5px;
 }
 .lily-decoration {
-  width: 180px;
-  height: 180px;
-  margin: 30px auto;
-  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .invitation-signature {
   font-family: "Great Vibes", cursive;
@@ -280,6 +305,9 @@ main {
 .lily-decoration img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
 }
 .details {
@@ -351,9 +379,9 @@ main {
     margin-bottom: 20px;
   }
   .lily-decoration {
-    width: 140px;
-    height: 140px;
-    margin: 20px auto;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
   }
   .invitation-signature {
     font-size: 1.4rem;
@@ -406,9 +434,10 @@ main {
     margin-bottom: 15px;
   }
   .lily-decoration {
-    width: 80px;
-    height: 80px;
-    margin: 12px auto;
+    width: 100%;
+    height: 100%;
+    
+    margin: 0 auto;
   }
   .invitation-signature {
     font-size: 1.2rem;
@@ -457,9 +486,9 @@ main {
     margin-bottom: 8px;
   }
   .lily-decoration {
-    width: 45px;
-    height: 45px;
-    margin: 5px auto;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
   }
   .invitation-signature {
     font-size: 0.95rem;
