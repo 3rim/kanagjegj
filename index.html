@@ -21,6 +21,9 @@
             </div>
         </div>
         <div class="lilien-container hidden" id="lilien">
+            <!-- Language Buttons -->
+            <button class="lang-btn-sq" onclick="switchLanguage('sq')">SQ</button>
+            <button class="lang-btn-mk" onclick="switchLanguage('mk')">MK</button>
             <video class="lilien-video" autoplay loop muted playsinline>
                 <source src="assets/lilien.mp4" type="video/mp4">
             </video>
@@ -77,6 +80,67 @@
         </section>
     </main>
     <script>
+        // Übersetzungen für beide Sprachen
+        const translations = {
+            sq: {
+                title: "Ftesë për Kanagjegj",
+                text: "Është kënaqësi dhe nder i madh për mua t'ju ftoj të merrni pjesë në një nga momentet më të veçanta për familjen time - kënagjegjin e vajzës time.<br>Prania juaj do të jetë një bekim i çmuar dhe një gëzim i veçantë për ne.<br>Ju lutem, konfirmoni pjesëmarrjen tuaj.",
+                signature: "Me respekt dhe përzemërsi,<br>Valbona Rahimi",
+                scrollText: "Scroll down",
+                dataTitle: "Data & Ora",
+                dataText1: "E Ejnte, 18 qershor 2026",
+                dataText2: "Hyrja nga ora 18:30",
+                locationTitle: "Restoranti & Lokacioni",
+                locationText: "Ahengu",
+                language: "AL"
+            },
+            mk: {
+                title: "Покана за Канагјегј",
+                text: "Тоа е задоволство и чест за мене да ве поканам да учествувате во еден од најспецијалните моменти за моето семејство - канаѓегјот на мојата ќерка.<br>Вашето присуство ќе биде благослов и посебна радост за нас.<br>Ве молам, потврдете го вашето учество.",
+                signature: "Со почит и љубов,<br>Валбона Рахими",
+                scrollText: "Scroll down",
+                dataTitle: "Дата и час",
+                dataText1: "Петок, 18 јуни 2026",
+                dataText2: "Влез од 18:30 часот",
+                locationTitle: "Ресторан и локација",
+                locationText: "Ахенгу",
+                language: "MK"
+            }
+        };
+
+        let currentLang = 'sq';
+
+        // Sprache wechseln
+        function switchLanguage(lang) {
+            currentLang = lang;
+            updateTexts();
+            updateButtonStates();
+        }
+
+        // Button-Zustände aktualisieren
+        function updateButtonStates() {
+            document.querySelector('.lang-btn-sq').classList.toggle('active', currentLang === 'sq');
+            document.querySelector('.lang-btn-mk').classList.toggle('active', currentLang === 'mk');
+        }
+
+        // Texte aktualisieren
+        function updateTexts() {
+            const t = translations[currentLang];
+            
+            // Einladungstexte
+            document.querySelector('.invitation-title').textContent = t.title;
+            document.querySelector('.invitation-text').innerHTML = t.text;
+            document.querySelector('.invitation-signature').innerHTML = t.signature;
+            document.querySelector('.scroll-text').textContent = t.scrollText;
+            
+            // Detail-Texte
+            document.querySelector('.card h2').textContent = t.dataTitle;
+            document.querySelectorAll('.card p')[0].textContent = t.dataText1;
+            document.querySelectorAll('.card p')[1].textContent = t.dataText2;
+            document.querySelectorAll('.card h2')[1].textContent = t.locationTitle;
+            document.querySelectorAll('.card p')[2].textContent = t.locationText;
+        }
+
         function openEnvelope() {
             document.getElementById('envelope').classList.add('hidden');
             document.getElementById('lilien').classList.remove('hidden');

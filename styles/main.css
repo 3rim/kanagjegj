@@ -124,6 +124,80 @@ main {
   align-items: center;
   justify-content: center;
 }
+/* Language Buttons */
+.lang-btn-sq, .lang-btn-mk {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #e8e0d0;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4a3428;
+  cursor: pointer;
+  z-index: 300;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  margin-left: 10px;
+}
+
+.lang-btn-sq {
+  right: 62px;
+}
+
+.lang-btn-mk {
+  right: 20px;
+}
+
+.lang-btn-sq:hover, .lang-btn-mk:hover {
+  background: rgba(232, 224, 208, 0.95);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.lang-btn-sq.active, .lang-btn-mk.active {
+  background: rgba(221, 211, 192, 0.95);
+  color: white;
+  border-color: #b9babb;
+}
+
+/* Responsive Language Buttons */
+@media (max-width: 768px) {
+  .lang-btn-sq, .lang-btn-mk {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .lang-btn-sq {
+    right: 60px;
+  }
+  
+  .lang-btn-mk {
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lang-btn-sq, .lang-btn-mk {
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .lang-btn-sq {
+    right: 45px;
+  }
+  
+  .lang-btn-mk {
+    right: 10px;
+  }
+}
 .seal-text {
   color: #4a3428;
   font-size: 14px;
