@@ -24,6 +24,7 @@
             <!-- Language Buttons -->
             <button class="lang-btn-sq" onclick="switchLanguage('sq')">SQ</button>
             <button class="lang-btn-mk" onclick="switchLanguage('mk')">MK</button>
+            <button class="lang-btn-tr" onclick="switchLanguage('tr')">TR</button>
             <video class="lilien-video" autoplay loop muted playsinline>
                 <source src="assets/lilien.mp4" type="video/mp4">
             </video>
@@ -80,7 +81,7 @@
         </section>
     </main>
     <script>
-        // Übersetzungen für beide Sprachen
+        // Übersetzungen für drei Sprachen
         const translations = {
             sq: {
                 title: "Ftesë për Kanagjegj",
@@ -105,6 +106,18 @@
                 locationTitle: "Ресторан и локација",
                 locationText: "Ахенгу",
                 language: "MK"
+            },
+            tr: {
+                title: "Kınağ Davetiyesi",
+                text: "Size kızım için beni bu özel andanlardan birine davet etmekten büyük bir onur duyuyorum - kızımın kınağ daveti.<br>Sizin varlığınız bizim için bir lütuf ve özel bir mutluluk olacak.<br>Lütfen katılımınızı onaylayın.",
+                signature: "Saygı ve sevgiyle,<br>Valbona Rahimi",
+                scrollText: "Scroll down",
+                dataTitle: "Tarih & Saat",
+                dataText1: "Cuma, 18 Haziran 2026",
+                dataText2: "Giriş 18:30'da",
+                locationTitle: "Restoran & Konum",
+                locationText: "Ahengu",
+                language: "EN"
             }
         };
 
@@ -121,6 +134,7 @@
         function updateButtonStates() {
             document.querySelector('.lang-btn-sq').classList.toggle('active', currentLang === 'sq');
             document.querySelector('.lang-btn-mk').classList.toggle('active', currentLang === 'mk');
+            document.querySelector('.lang-btn-tr').classList.toggle('active', currentLang === 'tr');
         }
 
         // Texte aktualisieren
