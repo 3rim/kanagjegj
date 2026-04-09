@@ -563,6 +563,25 @@ main {
 }
 
 @media (max-width: 375px) {
+  .lang-btn-sq, .lang-btn-mk, .lang-btn-tr {
+    top: 8px;
+    right: 8px;
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+  
+  .lang-btn-sq {
+    right: 65px;
+  }
+  
+  .lang-btn-mk {
+    right: 35px;
+  }
+  
+  .lang-btn-tr {
+    right: 8px;
+  }
+  
   .lilie-top img,
   .lilie-bottom img {
     max-width: 160px;
@@ -577,8 +596,8 @@ main {
     margin-bottom: 8px;
   }
   .invitation-text {
-    font-size: 0.3rem;
-    line-height: 1.0;
+    font-size: 1.3rem;
+    line-height: 1.4;
     margin-bottom: 8px;
   }
   .lily-decoration {
