@@ -222,9 +222,6 @@ main {
 }
 
 /* Invitation Content Styling */
-.lilien-audio {
-  volume: 0.3; /* 30% Lautstärke */
-}
 .lilien-video {
   position: absolute;
   top: 0;

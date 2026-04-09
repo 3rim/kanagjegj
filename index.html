@@ -24,7 +24,7 @@
             <video class="lilien-video" autoplay loop muted playsinline>
                 <source src="assets/lilien.mp4" type="video/mp4">
             </video>
-            <audio class="lilien-audio" autoplay loop>
+            <audio class="lilien-audio">
                 <source src="assets/Once-Upon-a-December-Anastasia_Media.mp3" type="audio/mpeg">
             </audio>
             <div class="invitation-content">
@@ -81,6 +81,22 @@
             document.getElementById('envelope').classList.add('hidden');
             document.getElementById('lilien').classList.remove('hidden');
             document.getElementById('details').classList.remove('hidden');
+            
+            // Audio von 0:38 bis 1:04 einmal abspielen
+            const audio = document.querySelector('.lilien-audio');
+            if (audio) {
+                audio.volume = 0.1;
+                audio.currentTime = 38; // Start bei 38 Sekunden
+                audio.play().catch(e => console.log('Audio play failed:', e));
+                
+                // Audio bei 64 Sekunden (1:04) stoppen
+                setTimeout(() => {
+                    if (!audio.paused) {
+                        audio.pause();
+                    }
+                }, 26000); // 64 - 38 = 26 Sekunden Spielzeit
+            }
+            
             // SVG-Animation neu starten
             const lilySvg = document.querySelector('.lily-svg');
             if (lilySvg) {
