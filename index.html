@@ -25,7 +25,7 @@
                 <source src="assets/lilien.mp4" type="video/mp4">
             </video>
             <audio class="lilien-audio">
-                <source src="assets/Once-Upon-a-December-Anastasia_Media.mp3" type="audio/mpeg">
+                <source src="assets/Once-Upon-A-December-Piano.mp3" type="audio/mpeg">
             </audio>
             <div class="invitation-content">
                 <div class="section-title-text">
@@ -82,40 +82,19 @@
             document.getElementById('lilien').classList.remove('hidden');
             document.getElementById('details').classList.remove('hidden');
             
-            // Audio von 0:38 bis 1:05 einmal abspielen mit Safari-kompatiblem Fade-out
+            // Audio von 0:35 bis 1:02 einmal abspielen
             const audio = document.querySelector('.lilien-audio');
             if (audio) {
-                audio.currentTime = 38; // Start bei 38 Sekunden
+                audio.volume = 0.1;
+                audio.currentTime = 35; // Start bei 35 Sekunden
                 audio.play().catch(e => console.log('Audio play failed:', e));
                 
-                // Safari-kompatibler Fade-out mit Web Audio API Fallback
-                const fadeOutAudio = () => {
-                    if (audio.paused) return;
-                    
-                    // Versuche Volume-Steuerung (funktioniert auf den meisten Browsern)
-                    if (audio.volume !== undefined) {
-                        audio.volume = 0.1;
-                        let fadeInterval = setInterval(() => {
-                            if (audio.volume > 0.01 && !audio.paused) {
-                                audio.volume -= 0.005;
-                            } else {
-                                clearInterval(fadeInterval);
-                                audio.pause();
-                            }
-                        }, 50);
+                // Audio bei 1:02 (62 Sekunden) stoppen
+                setTimeout(() => {
+                    if (!audio.paused) {
+                        audio.pause();
                     }
-                    // Fallback für Safari: Einfach stoppen (kein Fade-out)
-                    else {
-                        setTimeout(() => {
-                            if (!audio.paused) {
-                                audio.pause();
-                            }
-                        }, 2000);
-                    }
-                };
-                
-                // Fade-out bei 1:03 starten
-                setTimeout(fadeOutAudio, 25000);
+                }, 28000); // 62 - 35 = 27 Sekunden Spielzeit
             }
             
             // SVG-Animation neu starten
