@@ -615,8 +615,8 @@ main {
   .scroll-down .arrow {
     width: 6px;
     height: 6px;
-    border-bottom: 3px solid #4a3428;
-    border-right: 3px solid #4a3428;
+    border-bottom: 4px solid #2a2418;
+    border-right: 4px solid #2a2418;
   }
   .wax-seal {
     min-width: 250px;
