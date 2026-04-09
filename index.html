@@ -82,19 +82,26 @@
             document.getElementById('lilien').classList.remove('hidden');
             document.getElementById('details').classList.remove('hidden');
             
-            // Audio von 0:38 bis 1:04 einmal abspielen
+            // Audio von 0:38 bis 1:04 einmal abspielen mit Fade-out
             const audio = document.querySelector('.lilien-audio');
             if (audio) {
                 audio.volume = 0.1;
                 audio.currentTime = 38; // Start bei 38 Sekunden
                 audio.play().catch(e => console.log('Audio play failed:', e));
                 
-                // Audio bei 64 Sekunden (1:04) stoppen
+                // Fade-out in den letzten 2 Sekunden starten (bei 63 Sekunden)
                 setTimeout(() => {
                     if (!audio.paused) {
-                        audio.pause();
+                        let fadeInterval = setInterval(() => {
+                            if (audio.volume > 0.01) {
+                                audio.volume -= 0.005; // Langsames Ausblenden
+                            } else {
+                                clearInterval(fadeInterval);
+                                audio.pause();
+                            }
+                        }, 50); // Alle 50ms Lautstärke reduzieren
                     }
-                }, 26000); // 64 - 38 = 26 Sekunden Spielzeit
+                }, 25000); // 63 - 38 = 25 Sekunden bis Fade-out beginnt
             }
             
             // SVG-Animation neu starten
