@@ -609,9 +609,14 @@ main {
     font-size: 0.95rem;
     margin-top: 5px;
   }
+  .scroll-down .scroll-text {
+    display: none;
+  }
   .scroll-down .arrow {
     width: 6px;
     height: 6px;
+    border-bottom: 3px solid #4a3428;
+    border-right: 3px solid #4a3428;
   }
   .wax-seal {
     min-width: 250px;
