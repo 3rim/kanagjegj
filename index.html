@@ -82,26 +82,40 @@
             document.getElementById('lilien').classList.remove('hidden');
             document.getElementById('details').classList.remove('hidden');
             
-            // Audio von 0:38 bis 1:04 einmal abspielen mit Fade-out
+            // Audio von 0:38 bis 1:05 einmal abspielen mit Safari-kompatiblem Fade-out
             const audio = document.querySelector('.lilien-audio');
             if (audio) {
-                audio.volume = 0.1;
                 audio.currentTime = 38; // Start bei 38 Sekunden
                 audio.play().catch(e => console.log('Audio play failed:', e));
                 
-                // Fade-out in den letzten 2 Sekunden starten (bei 63 Sekunden)
-                setTimeout(() => {
-                    if (!audio.paused) {
+                // Safari-kompatibler Fade-out mit Web Audio API Fallback
+                const fadeOutAudio = () => {
+                    if (audio.paused) return;
+                    
+                    // Versuche Volume-Steuerung (funktioniert auf den meisten Browsern)
+                    if (audio.volume !== undefined) {
+                        audio.volume = 0.1;
                         let fadeInterval = setInterval(() => {
-                            if (audio.volume > 0.01) {
-                                audio.volume -= 0.005; // Langsames Ausblenden
+                            if (audio.volume > 0.01 && !audio.paused) {
+                                audio.volume -= 0.005;
                             } else {
                                 clearInterval(fadeInterval);
                                 audio.pause();
                             }
-                        }, 50); // Alle 50ms Lautstärke reduzieren
+                        }, 50);
                     }
-                }, 25000); // 63 - 38 = 25 Sekunden bis Fade-out beginnt
+                    // Fallback für Safari: Einfach stoppen (kein Fade-out)
+                    else {
+                        setTimeout(() => {
+                            if (!audio.paused) {
+                                audio.pause();
+                            }
+                        }, 2000);
+                    }
+                };
+                
+                // Fade-out bei 1:03 starten
+                setTimeout(fadeOutAudio, 25000);
             }
             
             // SVG-Animation neu starten
